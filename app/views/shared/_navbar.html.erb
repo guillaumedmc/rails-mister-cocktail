@@ -1,0 +1,21 @@
+<div class="navbar-wagon navbar-fixed-top">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <%= image_tag "logo.png", height: 50 %>
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+   <button class="btn btn-medium"> <%= link_to 'Add a new cocktail', new_cocktail_path %></button>
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li> <%= link_to 'Add a new cocktail', new_cocktail_path %></li>
+      </ul>
+    </div>
+  </div>
+</div>
