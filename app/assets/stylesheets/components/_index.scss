@@ -3,3 +3,16 @@
 @import "navbar";
 @import "banner";
 @import "button";
+@import "cards";
+
+a {
+  text-decoration: none;
+  color: grey;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-size: 40;
+}

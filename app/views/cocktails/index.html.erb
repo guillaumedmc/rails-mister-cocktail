@@ -2,27 +2,24 @@
 <div class="home-banner">
   <h1>Cocktails list</h1>
 </div>
+<br>
+<br>
 
 <div class="container">
-
-<br>
-<br>
-
-  <% @cocktails.each do |cocktail| %>
-  <div class="container">
-    <div class="row">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?blur');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+        <% unless cocktail.photo.blank? %>
+          <div class="card padding-20" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>');">
+            <div class="card-description">
+              <h3><%= link_to cocktail.name, cocktail_path(cocktail) %> - <%= link_to cocktail, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                <i class="far fa-trash-alt"></i></h3>
+              <% end %>
+
+            </div>
           </div>
-        </div>
-      <!-- insert <div class="card"> -->
-
+        <% end %>
       </div>
-    </div>
+     <% end %>
   </div>
-  <% end %>
-
 </div>
